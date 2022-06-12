@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splitter</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Splitter</h1>
+    </header>
+
+    <main class="card">
+      <div class="inputs_card">
+        <div class="main_number_input">
+          <label for="bill">Bill</label>
+          <div>
+            <input id="bill" type="number" />
+            <img src="assets/svgs/icon-dollar.svg" alt="" />
+          </div>
+        </div>
+
+        <div class="tip_input">
+          <p>Select Tip %</p>
+          <div>
+            <input type="radio" name="tip_percentage" id="5" value="5" placeholder="5%"/>
+            <input type="radio" name="tip_percentage" id="10" value="10" />
+            <input type="radio" name="tip_percentage" id="15" value="15" />
+            <input type="radio" name="tip_percentage" id="25" value="25" />
+            <input type="radio" name="tip_percentage" id="50" value="50" />
+            <input type="number" placeholder="Custom" name="" id="">
+          </div>
+        </div>
+
+        <div class="main_number_input">
+          <label for="bill">Number of People</label>
+          <div>
+            <input id="numberOfPeople" type="number" />
+            <img src="assets/svgs/icon-person.svg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="results_card">
+        
+      </div>
+    </main>
+  </body>
+</html>
