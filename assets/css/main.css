@@ -16,6 +16,16 @@
   --light-grayish-cyan: hsl(185, 41%, 84%);
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
+  --input-error: hsl(0, 100%, 66%);
+
+  --input-border-height: 0.3rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
 }
 
 body {
@@ -40,7 +50,7 @@ h1 {
 
 main {
   background-color: var(--white);
-  width: 100vw;
+  width: 100%;
   padding: 2.5rem;
   border-radius: 2.1rem;
   display: flex;
@@ -67,10 +77,7 @@ main {
   color: var(--dark-grayish-cyan);
 }
 
-.main_number_input input::-webkit-inner-spin-button,
-.main_number_input input,
-.main_number_input input:focus {
-  -webkit-appearance: none;
+.main_number_input input {
   all: unset;
   height: 4.3rem;
   background-color: var(--very-light-grayish-cyan);
@@ -79,9 +86,15 @@ main {
   font-size: 2.4rem;
   text-align: end;
   padding-block: 0.5rem;
-  padding-inline: 0.8rem;
+  padding-inline: 2rem;
   color: var(--very-dark-cyan);
   -moz-appearance: textfield;
+  cursor: pointer;
+}
+
+.main_number_input input:focus, .main_number_input input:hover {
+  border: var(--input-border-height) solid var(--strong-cyan);
+  height: calc(4.3rem - var(--input-border-height) * 2);
 }
 
 .main_number_input div {
@@ -96,28 +109,83 @@ main {
   top: 1.8rem;
 }
 
-.tip_input div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+.main_number_input span {
+  display: flex;
+  justify-content: space-between;
 }
 
-.tip_input input[type='radio'] {
-  all: unset;
-  width: 100%;
+.main_number_input span p {
+  display: none;
+  color: rgb(255, 83, 83);
+}
+
+#main_number_input_01.error .error_msg {
+  display: block;
+}
+
+#main_number_input_01.error input {
+  border: var(--input-border-height) solid var(--input-error);
+  height: calc(4.3rem - var(--input-border-height) * 2);
+}
+
+#main_number_input_02.error .error_msg {
+  display: block;
+}
+
+#main_number_input_02.error input {
+  border: var(--input-border-height) solid var(--input-error);
+  height: calc(4.3rem - var(--input-border-height) * 2);
+}
+
+.tip_input div {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tip_input div div {
+  /* all: unset; */
+  width: 30%;
+  flex-grow: 1;
   height: 5rem;
   border-radius: 0.7rem;
-  background-color: var(--very-dark-cyan);
-  transition: 300ms;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.tip_input input[type='radio']:checked {
+.tip_input div div label {
+  position: absolute;
+  font-size: 2.4rem;
+  color: var(--very-light-grayish-cyan);
+  transition: 300ms;
+  pointer-events: none;
+}
+
+.tip_input div div input[type='radio'] {
+  all: unset;
+  width: 100%;
+  height: 100%;
+  background-color: var(--very-dark-cyan);
+  transition: 300ms;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.tip_input input[type='radio']:checked, .tip_input input[type='radio']:hover {
   background-color: var(--strong-cyan);
 }
 
+.tip_input input[type='radio']:checked + .radio_label, .tip_input input[type='radio']:hover + .radio_label {
+  color: var(--very-dark-cyan);
+}
+
 .tip_input input[type='number'] {
+  all: unset;
+  box-sizing: border-box;
   width: 100%;
-  height: 5rem;
+  height: 100%;
   border-radius: 0.7rem;
   text-align: end;
   background-color: var(--very-light-grayish-cyan);
@@ -125,13 +193,57 @@ main {
   border: none;
   font-size: 2.4rem;
   padding-block: 0.5rem;
-  padding-inline: 0.8rem;
+  padding-inline: 2rem;
+  border: none;
+  cursor: pointer;
 }
 
-/* OUTPUT CARDS */
+.tip_input input[type='number']:focus, .tip_input input[type='number']:hover {
+  border: 0.3rem solid var(--strong-cyan);
+}
+
+/* RESULTS CARD */
 .results_card {
   width: 100%;
   background-color: var(--very-dark-cyan);
   border-radius: 2rem;
-  height: 30rem;
+  padding: 4rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.7rem;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result span p:nth-child(1) {
+  color: var(--very-light-grayish-cyan);
+}
+
+.result span p:nth-child(2) {
+  font-size: 1.5rem;
+  color: var(--grayish-cyan);
+}
+
+.result div {
+  color: var(--strong-cyan);
+  font-size: 3rem;
+}
+
+.results_card button {
+  padding: 0.8rem;
+  font-size: 2.1rem;
+  border-radius: 0.7rem;
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+  border: none;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.results_card button:hover {
+  background-color: var(--light-grayish-cyan);
+
 }
