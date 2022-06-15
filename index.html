@@ -26,133 +26,137 @@
     <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <header>
-      <h1 class="title">Splitter</h1>
-    </header>
+    <div class="wrapper">
+      <header>
+        <h1 class="title">Splitter</h1>
+      </header>
 
-    <main class="card">
-      <div class="inputs_card">
-        <div id="main_number_input_01" class="main_number_input">
-          <span>
-            <label for="bill">Bill</label>
-            <p class="error_msg">Can't be zero</p>
-          </span>
-          <div>
-            <input id="bill" type="number" onchange="calculate()"/>
-            <img src="assets/svgs/icon-dollar.svg" alt="" />
+      <main class="card">
+        <div class="inputs_card">
+          <div id="main_number_input_01" class="main_number_input">
+            <span>
+              <label for="bill">Bill</label>
+              <p class="error_msg">Can't be zero</p>
+            </span>
+            <div>
+              <input id="bill" type="number" onchange="calculate()" />
+              <img src="assets/svgs/icon-dollar.svg" alt="" />
+            </div>
+          </div>
+
+          <div class="tip_input">
+            <p>Select Tip %</p>
+            <div>
+              <div>
+                <input
+                  type="radio"
+                  name="tip_percentage"
+                  class="tip_percentage"
+                  id="tip_5"
+                  value="5"
+                  placeholder="5%"
+                  onclick="removeInputNumberValue(`#percentage_number_input`)"
+                  onchange="calculate()"
+                />
+                <label class="radio_label" for="tip_5">5%</label>
+              </div>
+              <div>
+                <input
+                  class="tip_percentage"
+                  type="radio"
+                  name="tip_percentage"
+                  id="10"
+                  value="10"
+                  onclick="removeInputNumberValue(`#percentage_number_input`)"
+                  onchange="calculate()"
+                />
+                <label class="radio_label" for="tip_6">10%</label>
+              </div>
+              <div>
+                <input
+                  class="tip_percentage"
+                  type="radio"
+                  name="tip_percentage"
+                  id="15"
+                  value="15"
+                  onclick="removeInputNumberValue(`#percentage_number_input`)"
+                  onchange="calculate()"
+                />
+                <label class="radio_label" for="tip_7">15%</label>
+              </div>
+              <div>
+                <input
+                  class="tip_percentage"
+                  type="radio"
+                  name="tip_percentage"
+                  id="25"
+                  value="25"
+                  onclick="removeInputNumberValue(`#percentage_number_input`)"
+                  onchange="calculate()"
+                />
+                <label class="radio_label" for="tip_8">25%</label>
+              </div>
+              <div>
+                <input
+                  class="tip_percentage"
+                  type="radio"
+                  name="tip_percentage"
+                  id="50"
+                  value="50"
+                  onclick="removeInputNumberValue(`#percentage_number_input`)"
+                  onchange="calculate()"
+                />
+                <label class="radio_label" for="tip_9">50%</label>
+              </div>
+              <div class="last_input">
+                <input
+                  onclick="uncheckRadioButtons()"
+                  id="percentage_number_input"
+                  type="number"
+                  placeholder="Custom"
+                  name=""
+                  id=""
+                  onchange="calculate()"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div id="main_number_input_02" class="main_number_input">
+            <span>
+              <label for="numberOfPeople">Number of People</label>
+              <p class="error_msg">Can't be zero</p>
+            </span>
+            <div>
+              <input id="numberOfPeople" type="number" onchange="calculate()" />
+              <img src="assets/svgs/icon-person.svg" alt="" />
+            </div>
           </div>
         </div>
 
-        <div class="tip_input">
-          <p>Select Tip %</p>
-          <div>
-            <div>
-              <input
-                type="radio"
-                name="tip_percentage"
-                class="tip_percentage"
-                id="tip_5"
-                value="5"
-                placeholder="5%"
-                onclick="removeInputNumberValue()"
-                onchange="calculate()"
-              />
-              <label class="radio_label" for="tip_5">5%</label>
+        <div class="results_card">
+          <div class="container">
+            <div class="result">
+              <span>
+                <p>Tip Amount</p>
+                <p>/ person</p>
+              </span>
+              <div>$<span id="result01">0.00</span></div>
             </div>
-            <div>
-              <input
-                class="tip_percentage"
-                type="radio"
-                name="tip_percentage"
-                id="10"
-                value="10"
-                onclick="removeInputNumberValue()"
-                onchange="calculate()"
-              />
-              <label class="radio_label" for="tip_6">10%</label>
-            </div>
-            <div>
-              <input
-                class="tip_percentage"
-                type="radio"
-                name="tip_percentage"
-                id="15"
-                value="15"
-                onclick="removeInputNumberValue()"
-                onchange="calculate()"
-              />
-              <label class="radio_label" for="tip_7">15%</label>
-            </div>
-            <div>
-              <input
-                class="tip_percentage"
-                type="radio"
-                name="tip_percentage"
-                id="25"
-                value="25"
-                onclick="removeInputNumberValue()"
-                onchange="calculate()"
-              />
-              <label class="radio_label" for="tip_8">25%</label>
-            </div>
-            <div>
-              <input
-                class="tip_percentage"
-                type="radio"
-                name="tip_percentage"
-                id="50"
-                value="50"
-                onclick="removeInputNumberValue()"
-                onchange="calculate()"
-              />
-              <label class="radio_label" for="tip_9">50%</label>
-            </div>
-            <div class="last_input">
-              <input
-                onclick="uncheckRadioButtons()"
-                id="percentage_number_input"
-                type="number"
-                placeholder="Custom"
-                name=""
-                id=""
-                onchange="calculate()"
-              />
+  
+            <div class="result">
+              <span>
+                <p>Total</p>
+                <p>/ person</p>
+              </span>
+              <div>$<span id="result02">0.00</span></div>
             </div>
           </div>
-        </div>
 
-        <div id="main_number_input_02" class="main_number_input">
-          <span>
-            <label for="numberOfPeople">Number of People</label>
-            <p class="error_msg">Can't be zero</p>
-          </span>
-          <div>
-            <input id="numberOfPeople" type="number" onchange="calculate()"/>
-            <img src="assets/svgs/icon-person.svg" alt="" />
-          </div>
+          <button id="reset" onclick="resetApp()" class="reset">RESET</button>
         </div>
-      </div>
-
-      <div class="results_card">
-        <div class="result">
-          <span>
-            <p>Tip Amount</p>
-            <p>/ person</p>
-          </span>
-          <div>$<span id="result01">0.00</span></div>
-        </div>
-
-        <div class="result">
-          <span>
-            <p>Total</p>
-            <p>/ person</p>
-          </span>
-          <div>$<span id="result02">0.00</span></div>
-        </div>
-
-        <button class="reset">RESET</button>
-      </div>
-    </main>
+      </main>
+    </div>
 
     <!-- SCROLL REVEAL LIB -->
     <script src="https://unpkg.com/scrollreveal"></script>

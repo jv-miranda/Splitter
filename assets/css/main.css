@@ -21,11 +21,11 @@
   --input-border-height: 0.3rem;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 body {
@@ -92,7 +92,8 @@ main {
   cursor: pointer;
 }
 
-.main_number_input input:focus, .main_number_input input:hover {
+.main_number_input input:focus,
+.main_number_input input:hover {
   border: var(--input-border-height) solid var(--strong-cyan);
   height: calc(4.3rem - var(--input-border-height) * 2);
 }
@@ -173,11 +174,13 @@ main {
   cursor: pointer;
 }
 
-.tip_input input[type='radio']:checked, .tip_input input[type='radio']:hover {
+.tip_input input[type='radio']:checked,
+.tip_input input[type='radio']:hover {
   background-color: var(--strong-cyan);
 }
 
-.tip_input input[type='radio']:checked + .radio_label, .tip_input input[type='radio']:hover + .radio_label {
+.tip_input input[type='radio']:checked + .radio_label,
+.tip_input input[type='radio']:hover + .radio_label {
   color: var(--very-dark-cyan);
 }
 
@@ -198,7 +201,8 @@ main {
   cursor: pointer;
 }
 
-.tip_input input[type='number']:focus, .tip_input input[type='number']:hover {
+.tip_input input[type='number']:focus,
+.tip_input input[type='number']:hover {
   border: 0.3rem solid var(--strong-cyan);
 }
 
@@ -210,6 +214,7 @@ main {
   padding: 4rem 2.5rem 2.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 2.7rem;
 }
 
@@ -232,6 +237,12 @@ main {
   font-size: 3rem;
 }
 
+.results_card .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.7rem;
+}
+
 .results_card button {
   padding: 0.8rem;
   font-size: 2.1rem;
@@ -239,11 +250,42 @@ main {
   color: var(--very-dark-cyan);
   background-color: var(--strong-cyan);
   border: none;
-  cursor: pointer;
   transition: 300ms;
+  opacity: 0.3;
 }
 
-.results_card button:hover {
-  background-color: var(--light-grayish-cyan);
+.results_card button.active {
+  transition: 300ms;
+  opacity: 1;
+}
 
+.results_card button.active:hover {
+  background-color: var(--light-grayish-cyan);
+}
+
+@media (min-width: 769px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 2rem;
+  }
+
+  main {
+    flex-direction: row;
+  }
+
+  .inputs_card {
+    width: 50%;
+  }
+
+  .results_card {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1023px) {
+  main {
+    width: 100rem;
+  }
 }
