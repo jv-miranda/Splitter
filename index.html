@@ -39,7 +39,7 @@
               <p class="error_msg">Can't be zero</p>
             </span>
             <div>
-              <input id="bill" type="number" onchange="calculate()" />
+              <input id="bill" type="number" oninput="calculate()" />
               <img src="assets/svgs/icon-dollar.svg" alt="" />
             </div>
           </div>
@@ -56,7 +56,7 @@
                   value="5"
                   placeholder="5%"
                   onclick="removeInputNumberValue(`#percentage_number_input`)"
-                  onchange="calculate()"
+                  oninput="calculate()"
                 />
                 <label class="radio_label" for="tip_5">5%</label>
               </div>
@@ -68,7 +68,7 @@
                   id="10"
                   value="10"
                   onclick="removeInputNumberValue(`#percentage_number_input`)"
-                  onchange="calculate()"
+                  oninput="calculate()"
                 />
                 <label class="radio_label" for="tip_6">10%</label>
               </div>
@@ -80,7 +80,7 @@
                   id="15"
                   value="15"
                   onclick="removeInputNumberValue(`#percentage_number_input`)"
-                  onchange="calculate()"
+                  oninput="calculate()"
                 />
                 <label class="radio_label" for="tip_7">15%</label>
               </div>
@@ -92,7 +92,7 @@
                   id="25"
                   value="25"
                   onclick="removeInputNumberValue(`#percentage_number_input`)"
-                  onchange="calculate()"
+                  oninput="calculate()"
                 />
                 <label class="radio_label" for="tip_8">25%</label>
               </div>
@@ -104,7 +104,7 @@
                   id="50"
                   value="50"
                   onclick="removeInputNumberValue(`#percentage_number_input`)"
-                  onchange="calculate()"
+                  oninput="calculate()"
                 />
                 <label class="radio_label" for="tip_9">50%</label>
               </div>
@@ -116,7 +116,7 @@
                   placeholder="Custom"
                   name=""
                   id=""
-                  onchange="calculate()"
+                  oninput="calculate()"
                 />
               </div>
             </div>
@@ -128,7 +128,7 @@
               <p class="error_msg">Can't be zero</p>
             </span>
             <div>
-              <input id="numberOfPeople" type="number" onchange="calculate()" />
+              <input id="numberOfPeople" type="number" oninput="calculate()" />
               <img src="assets/svgs/icon-person.svg" alt="" />
             </div>
           </div>
