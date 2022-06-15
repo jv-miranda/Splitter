@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Screenshot
 
-<img scr="assets/screenshots/mobile_layout.png" width=50%>
 ![](assets/screenshots/desktop_layout.png)
+![](assets/screenshots/mobile_layout.png)
 
 ### Links
 
